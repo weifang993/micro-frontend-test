@@ -45,7 +45,8 @@ module.exports = {
             // This URL provides three important pieces of information: the module's name is "Header", it is hosted on "localhost:3001", 
             // and its module definition is "remoteEntry.js".
             remotes: { 
-                "HeaderApp": "HeaderApp@http://localhost:3001/remoteEntry.js",            
+                "HeaderApp": "HeaderApp@http://localhost:3001/remoteEntry.js",         
+                "UserRegApp": "UserRegApp@http://localhost:3002/remoteEntry.js",    
             },
             shared: {  // and shared
                 ...dependencies,  // other dependencies
@@ -57,6 +58,10 @@ module.exports = {
                     singleton: true,
                     requiredVersion: dependencies["react-dom"],
                 },
+                // "react-router-dom": { 
+                //     singleton: true,
+                //     requiredVersion: dependencies["react-router-dom"],
+                // },
             },
         }),
     ],

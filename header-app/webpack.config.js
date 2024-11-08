@@ -10,6 +10,8 @@ module.exports = {
     mode: "development",
     devServer: {
         port: 3001,  // port 3001 for header-app
+        allowedHosts: 'all',  // ['localhost']
+        // host: '0.0.0.0',
     },
     module: {
         rules: [
@@ -46,10 +48,12 @@ module.exports = {
               react: { // react
                 singleton: true,
                 requiredVersion: dependencies["react"],
+                // eager: false,
               },
               "react-dom": { // react-dom
                 singleton: true,
                 requiredVersion: dependencies["react-dom"],
+                // eager: false,
               },
             },
         }),

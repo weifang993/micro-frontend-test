@@ -10,6 +10,7 @@ module.exports = {
     mode: "development",
     devServer: {
         port: 3002,  // port 3002 for user-reg-app
+        allowedHosts: 'all', 
     },
     module: {
         rules: [
@@ -39,17 +40,19 @@ module.exports = {
             name: "UserRegApp",  // This application named 'UserRegApp'
             filename: "remoteEntry.js",  // output a js file
             exposes: { // which exposes
-              "./UserRegApp": "./src/App",  // a module 'UserRegApp' from './src/App'
+              "./UserReg": "./src/App",  // a module 'UserReg' from './src/App'
             },
             shared: {  // and shared
               ...dependencies,  // some other dependencies
               react: { // react
                 singleton: true,
                 requiredVersion: dependencies["react"],
+                // eager: false,
               },
               "react-dom": { // react-dom
                 singleton: true,
                 requiredVersion: dependencies["react-dom"],
+                // eager: false,
               },
             },
         }),
